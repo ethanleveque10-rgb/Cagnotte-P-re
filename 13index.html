@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Soutenir mon père</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #e6ecf2);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 50px 20px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .texte {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            flex: 1;
+        }
+
+        .texte h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .texte p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .texte .heart {
+            font-size: 26px;
+            color: #e74c3c;
+            margin-top: 15px;
+        }
+
+        .paypal {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .paypal a {
+            display: inline-block;
+            background-color: #0070ba;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .paypal a:hover {
+            background-color: #005c99;
+        }
+
+        .images {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .images img {
+            border-radius: 12px;
+            width: 250px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .translate-btn {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .translate-btn:hover {
+            background-color: #1e8449;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .paypal {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .images img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Texte principal -->
+        <div class="texte">
+            <div class="translate-btn" onclick="translateText()">Translate / Traduire</div>
+
+            <h1 id="title">Pourquoi cette cagnotte ?</h1>
+
+            <p id="para1">
+                J’ai créé cette cagnotte pour soutenir mon père, qui traverse
+                actuellement une période compliquée.
+            </p>
+
+            <p id="para2">
+                Face aux difficultés de la vie, il fait de son mieux pour tenir bon,
+                mais certaines galères deviennent parfois trop lourdes à porter seul.
+                Cette aide servira à lui apporter un soutien financier et surtout un
+                peu de sérénité pour continuer à avancer.
+            </p>
+
+            <p id="para3">
+                Chaque geste, chaque pensée et chaque partage comptent énormément.
+                Merci sincèrement à toutes les personnes qui prendront le temps
+                d’envoyer de la force.
+            </p>
+
+            <div class="heart">❤️</div>
+        </div>
+
+        <!-- Bouton Paypal + Images -->
+        <div class="paypal">
+            <a href="https://paypal.me/zerfox59540?locale.x=fr_FR&country.x=FR" target="_blank">💳 PAIEMENT PAYPAL</a>
+
+            <div class="images">
+                <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?crop=entropy&cs=tinysrgb&fit=max&h=250&w=400" alt="Soutien">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&h=250&w=400" alt="Famille">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isEnglish = false;
+
+        function translateText() {
+            if(!isEnglish) {
+                document.getElementById('title').innerText = "Why this fundraiser?";
+                document.getElementById('para1').innerText = "I created this fundraiser to support my father, who is currently going through a difficult time.";
+                document.getElementById('para2').innerText = "Life can be tough, and he is doing his best to hold on, but some hardships are sometimes too heavy to carry alone. This help will provide financial support and bring him some peace of mind to keep moving forward.";
+                document.getElementById('para3').innerText = "Every gesture, thought, and share matters greatly. Sincere thanks to everyone who takes the time to send support ❤️";
+                isEnglish = true;
+            } else {
+                document.getElementById('title').innerText = "Pourquoi cette cagnotte ?";
+                document.getElementById('para1').innerText = "J’ai créé cette cagnotte pour soutenir mon père, qui traverse actuellement une période compliquée.";
+                document.getElementById('para2').innerText = "Face aux difficultés de la vie, il fait de son mieux pour tenir bon, mais certaines galères deviennent parfois trop lourdes à porter seul. Cette aide servira à lui apporter un soutien financier et surtout un peu de sérénité pour continuer à avancer.";
+                document.getElementById('para3').innerText = "Chaque geste, chaque pensée et chaque partage comptent énormément. Merci sincèrement à toutes les personnes qui prendront le temps d’envoyer de la force.";
+                isEnglish = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
